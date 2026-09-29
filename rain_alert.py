@@ -72,15 +72,15 @@ def main():
     raining_now = rate > 0.0
 
     if raining_now and not state["raining"]:
-        send_telegram(f"🌧️ Empieza a llover en Begues: {rate} mm/h "
-                      f"(acumulado hoy {rain_today} mm).\n{PAGE_URL}")
+        send_telegram(f"🌧️ Comença a ploure a Begues: {rate} mm/h "
+                      f"(acumulat avui {rain_today} mm).\n{PAGE_URL}")
     elif not raining_now and state["raining"] and NOTIFY_STOP:
-        send_telegram(f"☀️ Ha dejado de llover en Begues "
-                      f"(acumulado hoy {rain_today} mm).")
+        send_telegram(f"☀️ Ha parat de ploure a Begues "
+                      f"(acumulat avui {rain_today} mm).")
 
     if raining_now != state["raining"]:
         save_state({"raining": raining_now, "since": epoch})
-        print("Estado cambiado")
+        print("Estat canviat")
 
 
 if __name__ == "__main__":
