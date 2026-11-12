@@ -1,4 +1,5 @@
 {
   "raining": true,
-  "since": 1794430837
+  "since": 1794430837,
+  "fetch_failures": 1
 }
